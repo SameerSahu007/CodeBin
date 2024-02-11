@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'ubuntu': ['Ubuntu'],
+        'firacode': ['Fira Code'],
      }
     },
   },
