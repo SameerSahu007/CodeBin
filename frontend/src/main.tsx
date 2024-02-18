@@ -6,11 +6,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Paste from './components/Paste.tsx'
+import Code from './components/Code.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/paste/:pasteId",
+    element: <Paste />,
+  },
+  {
+    path: "/code/:codeId",
+    element: <Code />,
   },
 ]);
 
