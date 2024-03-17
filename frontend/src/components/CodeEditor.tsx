@@ -1,7 +1,7 @@
 import {Editor } from '@monaco-editor/react';
 import ThemeChoice from './ThemeChoice';
 import LangChoice from './LangChoice';
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar';
@@ -15,11 +15,12 @@ export default function CodeEditor() {
   const [progress, setProgress] = useState(0)
   const navigate = useNavigate();
 
-  function handleEditorChange(value, event) {
+  function handleEditorChange(value: string | undefined) {
+    if (value !== undefined) 
     setCode(value)
   }
 
-  function handleEditorDidMount(editor, monaco) {
+  function handleEditorDidMount(editor:any ) {
     editor.updateOptions({
       fontFamily: 'Fira Code',
       fontSize: 15,

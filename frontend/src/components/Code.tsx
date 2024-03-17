@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { ToastContainer, toast } from 'react-toastify';
@@ -19,11 +19,12 @@ export default function Code() {
 
 
 
-    function handleEditorChange(value, event) {
+    function handleEditorChange(value: string | undefined) {
+        if (value !== undefined)
         setCode(value)
     }
 
-    function handleEditorDidMount(editor, monaco) {
+    function handleEditorDidMount(editor : any) {
         editor.updateOptions({
             fontFamily: 'Fira Code',
             fontSize: 15,
