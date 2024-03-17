@@ -24,7 +24,7 @@ https://github.com/SameerSahu007/CodeBin/assets/29480670/6dae9954-8fcd-460a-b083
 1. Clone the repository:
 
     ```
-    git clone https://github.com/yourusername/codebin.git
+    git clone https://github.com/SameerSahu007/CodeBin.git
     ```
 
 2. Navigate into the project directory:
