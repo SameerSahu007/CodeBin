@@ -68,6 +68,8 @@ export default function CodeEditor() {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
+
+      <div className='border border-white p-1'>
       <Editor
         height="80vh"
         language={selectedLang}
@@ -76,17 +78,19 @@ export default function CodeEditor() {
         onChange={handleEditorChange}
         onMount={handleEditorDidMount}
         loading
-      />
-      <div className='flex my-2'>
+        />
+        </div>
+
+      <div className='flex my-2 items-center'>
         <ThemeChoice setSelectedTheme={setSelectedTheme} />
         <LangChoice setSelectedLang={setSelectedLang} />
         <button
-          className='p-2 bg-blue-600 text-white mx-2'
+          className='p-1 bg-blue-600 text-white mx-2 '
           onClick={handleCopy}>Copy</button>
         <button
-          className='p-2 bg-blue-600 text-white' onClick={fetchID}>Create Paste</button>
-
+          className='p-1 bg-blue-600 text-white' onClick={fetchID}>Create Paste</button>
       </div>
+
       <ToastContainer />
     </div>
   )

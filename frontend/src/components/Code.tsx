@@ -7,6 +7,7 @@ import {Editor } from '@monaco-editor/react';
 import ThemeChoice from './ThemeChoice';
 import LangChoice from './LangChoice';
 import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar';
 
 export default function Code() {
     const [isLoading, setIsLoading] = useState(true);
@@ -80,7 +81,10 @@ export default function Code() {
 
                 :
                 <div className=' m-auto font-firacode bg-[#292626] h-screen'>
+                <Navbar />
                 <div className='m-auto'>
+                
+                <div className='border border-white p-1'>
                 <Editor
                   height="80vh"
                   language={selectedLang}
@@ -89,8 +93,11 @@ export default function Code() {
                   onChange={handleEditorChange}
                   onMount={handleEditorDidMount}
                   loading
-                />
+                  />
+                  </div>
+                
                 <div className='flex my-2'>
+
                   <ThemeChoice setSelectedTheme={setSelectedTheme} />
                   <LangChoice setSelectedLang={setSelectedLang} />
                   <button
@@ -98,7 +105,7 @@ export default function Code() {
                     onClick={handleCopy}>Copy</button>
                   <button
                     className='p-2 bg-blue-600 text-white ' onClick={() =>navigate('/')}>Create New Paste</button>
-          
+
                 </div>
                 <ToastContainer />
               </div>

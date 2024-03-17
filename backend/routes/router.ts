@@ -9,10 +9,8 @@ router.post('/fetchID', async (req: Request, res: Response) => {
 });
 
 router.get('/getCode', async (req: Request, res: Response) => {
-  setTimeout(async () => {
     const userCode = await UserCode.findById(req.query.codeId);
     res.json(userCode);
-  }, 5000); // 5000 milliseconds = 5 seconds
 });
 
 
